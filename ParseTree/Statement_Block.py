@@ -23,6 +23,14 @@ class Statement_Block() :
       s.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    name = symbolTable.openScope( self.m_LineNum )
+
+    aslList = []
+    for s in self.m_StmtList :
+      aslList.append(s.semantic( symbolTable ))
+
+    ast = ( 'SCOPE', name, aslList )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#

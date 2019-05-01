@@ -14,9 +14,31 @@ def binaryResultType( op, lType, rType ) :
   return None
 
 def evaluateBinary( op, lValue, rValue ) :
-  return None, 'unknown binary operator' #Used to evaluate constant expressions
-   # if op divide, check left side for zero
-   # if op modulus, check if right side is zero
+  if ( op == '/' and lValue == 0 ) :
+    raise SemanticError( f'({self.m_LineNum}) Cannot divide by zero.' )
+
+  if ( op == '%' and rValue == 0 ) :
+    raise SemanticError( f'({self.m_LineNum}) Cannot mod by zero.' )
+
+  if ( op == '+' ) :
+    result = lValue + rValue
+  elif ( op == '-' ) :
+    result = lValue - rValue
+  elif ( op == '*' ) :
+    result = lValue * rValue
+  elif ( op == '/' ) :
+    result = lValue // rValue
+  elif ( op == '%' ) :
+    result = lValue % rValue
+  elif ( op == '^' ) :
+    result = lValue ^ rValue
+  elif ( op == '&&' or op == '||' or op == '<' or op == '<=' or op == '>' or op == '>=' or op == '==' or op == '!=' ) :
+    result = 1
+
+  if ( result != None ) :
+    return result
+  else :
+    return None, 'unknown binary operator'
 
 #---------#---------#---------#---------#---------#--------#
 class BinaryOp() :
@@ -37,7 +59,15 @@ class BinaryOp() :
     self.m_Right.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    return None # 16 lines of code
-    # Most if op equals '' then '' 2 lines different
+    leftAst = self.m_Left.semantic( symbolTable )
+    rightAst = self.m_Right.semantic( symbolTable )
+
+    type = binaryResultType(self.m_Op, leftAst[2], rightAst[2])
+    const = True if ( leftAst[3] == True and rightAst[3] == True ) else None
+    value = evaluateBinary(self.m_Op, leftAst[4], rightAst[4]) if const else None
+    
+    ast = ( 'EXPR', ( 'BINARY_OP', self.m_Op, leftAst, rightAst ), type, const, value )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#

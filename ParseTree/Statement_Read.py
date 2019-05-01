@@ -23,6 +23,12 @@ class Statement_Read() :
       lvalue.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    aslList = []
+    for lvalue in self.m_IDList :
+      aslList.append(lvalue.semantic( symbolTable ))
+
+    asl = ( 'READ', aslList )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#

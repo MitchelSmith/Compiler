@@ -23,6 +23,12 @@ class Statement_Write() :
       e.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    aslList = []
+    for e in self.m_ExprList :
+      aslList.append(e.semantic( symbolTable ))
+
+    asl = ( 'WRITE', aslList )
+
+    return asl
 
 #---------#---------#---------#---------#---------#--------#

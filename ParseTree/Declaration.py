@@ -57,6 +57,15 @@ class Declaration() :
         f'DECLARATION ({self.m_Kind!r}) unknown', fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    name = self.m_Args[0]
+
+    if (symbolTable.nameExistsInCurrentScope( name )) :
+        raise SemanticError( f'({self.m_LineNum}) Variable, {name!r}, already exists.' )
+
+    entry = symbolTable.addName( name, self.m_Kind, self.m_LineNum)
+
+    ast = ( 'VARIABLE_INIT', entry.qualifiedName, True, name )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#
