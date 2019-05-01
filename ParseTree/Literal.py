@@ -21,6 +21,8 @@ class Literal() :
       f'LITERAL {self.m_Kind!r} {self.m_Value!r}', fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    ast = ( 'EXPR', ( 'LITERAL', ), self.m_Kind, True, self.m_Value )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#

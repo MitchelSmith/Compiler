@@ -35,6 +35,17 @@ class Lvalue() :
         f'LVALUE ({self.m_Kind!r}) unknown', fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    if self.m_Kind != 'NAME' :
+      raise SemanticError( f'({self.m_LineNum}) Undeclared name {name!r} encountered.' )
+
+    name = self.m_Args[0]
+    entry = symbolTable.findName( name )
+
+    if entry is None :
+      raise SemanticError( f'({self.m_LineNum}) Undeclared name {name!r} encountered.' )
+
+    ast = ( 'EXPR', ( 'LVALUE', entry.qualifiedName ), entry.myType, False, None )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#
