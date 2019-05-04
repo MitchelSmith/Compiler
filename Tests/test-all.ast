@@ -1,11 +1,11 @@
 # test-all.mvl AST
-# 2019-04-30 17:24:02
+# 2019-05-02 17:13:27
 
 
 SCOPE 'SCOPE_1' <9>
   LITERAL 'int', 1
   LITERAL 'int', 1
-  LITERAL 'int', 0
+  LITERAL 'int', 1
   VARIABLE_INIT SCOPE_1:a
     LITERAL 'int', 23
   VARIABLE_INIT SCOPE_1:b
@@ -46,7 +46,7 @@ SCOPE 'SCOPE_1' <9>
 
 
 # test-all.mvl symbol table
-# 2019-04-30 17:24:02
+# 2019-05-02 17:13:27
 
 
 Scope ENVIRONMENT(0) [0] <NONE>

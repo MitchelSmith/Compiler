@@ -45,6 +45,8 @@ class Type() :
         f'TYPE ({self.m_Kind!r}) unknown', fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    ast = ( 'EXPR', None, self.m_Args[0], None, None )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#

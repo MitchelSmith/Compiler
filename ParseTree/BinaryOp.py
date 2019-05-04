@@ -3,6 +3,7 @@
 # 2019-05-03
 #---------#---------#---------#---------#---------#--------#
 import sys
+import operator
 
 from .common       import *
 
@@ -20,6 +21,10 @@ def evaluateBinary( op, lValue, rValue ) :
   if ( op == '%' and rValue == 0 ) :
     raise SemanticError( f'({self.m_LineNum}) Cannot mod by zero.' )
 
+  ops = { '+': operator.add, '-': operator.sub, '/': operator.floordiv, '*': operator.mul, '^': operator.pow,
+          '<': operator.lt, '<=': operator.le, '>': operator.gt, '>=': operator.ge, '%': operator.mod,
+          '||': operator.or_, '&&': operator.and_, '!=': operator.ne, '==': operator.eq }
+
   if ( op == '+' ) :
     result = lValue + rValue
   elif ( op == '-' ) :
@@ -33,7 +38,8 @@ def evaluateBinary( op, lValue, rValue ) :
   elif ( op == '^' ) :
     result = lValue ^ rValue
   elif ( op == '&&' or op == '||' or op == '<' or op == '<=' or op == '>' or op == '>=' or op == '==' or op == '!=' ) :
-    result = 1
+    result = ops['&&'](lValue,rValue)
+
 
   if ( result != None ) :
     return result

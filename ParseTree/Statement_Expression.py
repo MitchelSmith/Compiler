@@ -22,6 +22,8 @@ class Statement_Expression() :
     self.m_Expr.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    ast = self.m_Expr.semantic( symbolTable )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#

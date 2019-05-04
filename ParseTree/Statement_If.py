@@ -33,7 +33,17 @@ class Statement_If() :
       self.m_ElseStmt.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    return None # 18 lines of code, analyze expression recursively, if constant evaluate if true or false
-                # if else disappears use noop, if entire thing disappears use noop
+    testAst = self.m_TestExpr.semantic( symbolTable )
+    thenAst = self.m_ThenStmt.semantic( symbolTable )
+    if self.m_ElseStmt is not None :
+      elseAst = self.m_ElseStmt.semantic( symbolTable )
+    else :
+      elseAst = ( 'NOOP', )
+
+    ast = ( 'IF', testAst, thenAst, elseAst )
+
+    return ast
+    # 18 lines of code, analyze expression recursively, if constant evaluate if true or false
+    # if else disappears use noop, if entire thing disappears use noop
 
 #---------#---------#---------#---------#---------#--------#
