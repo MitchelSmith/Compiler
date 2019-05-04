@@ -18,27 +18,29 @@ def evaluateBinary( op, lValue, rValue ) :
   if ( op == '/' and lValue == 0 ) :
     raise SemanticError( f'({self.m_LineNum}) Cannot divide by zero.' )
 
-  if ( op == '%' and rValue == 0 ) :
+  if ( op == '%' and rValue == 0) :
     raise SemanticError( f'({self.m_LineNum}) Cannot mod by zero.' )
 
   ops = { '+': operator.add, '-': operator.sub, '/': operator.floordiv, '*': operator.mul, '^': operator.pow,
           '<': operator.lt, '<=': operator.le, '>': operator.gt, '>=': operator.ge, '%': operator.mod,
           '||': operator.or_, '&&': operator.and_, '!=': operator.ne, '==': operator.eq }
 
-  if ( op == '+' ) :
-    result = lValue + rValue
-  elif ( op == '-' ) :
-    result = lValue - rValue
-  elif ( op == '*' ) :
-    result = lValue * rValue
-  elif ( op == '/' ) :
-    result = lValue // rValue
-  elif ( op == '%' ) :
-    result = lValue % rValue
-  elif ( op == '^' ) :
-    result = lValue ^ rValue
-  elif ( op == '&&' or op == '||' or op == '<' or op == '<=' or op == '>' or op == '>=' or op == '==' or op == '!=' ) :
-    result = ops['&&'](lValue,rValue)
+  result = ops[op](lValue, rValue)
+
+  # if ( op == '+' ) :
+  #   result = lValue + rValue
+  # elif ( op == '-' ) :
+  #   result = lValue - rValue
+  # elif ( op == '*' ) :
+  #   result = lValue * rValue
+  # elif ( op == '/' ) :
+  #   result = lValue // rValue
+  # elif ( op == '%' ) :
+  #   result = lValue % rValue
+  # elif ( op == '^' ) :
+  #   result = lValue ^ rValue
+  # elif ( op == '&&' or op == '||' or op == '<' or op == '<=' or op == '>' or op == '>=' or op == '==' or op == '!=' ) :
+  #   result = ops['&&'](lValue, rValue)
 
 
   if ( result != None ) :
@@ -68,11 +70,11 @@ class BinaryOp() :
     leftAst = self.m_Left.semantic( symbolTable )
     rightAst = self.m_Right.semantic( symbolTable )
 
-    type = binaryResultType(self.m_Op, leftAst[2], rightAst[2])
+    semanticType = binaryResultType(self.m_Op, leftAst[2], rightAst[2])
     const = True if ( leftAst[3] == True and rightAst[3] == True ) else None
     value = evaluateBinary(self.m_Op, leftAst[4], rightAst[4]) if const else None
     
-    ast = ( 'EXPR', ( 'BINARY_OP', self.m_Op, leftAst, rightAst ), type, const, value )
+    ast = ( 'EXPR', ( 'BINARY_OP', self.m_Op, leftAst, rightAst ), semanticType, const, value )
 
     return ast
 

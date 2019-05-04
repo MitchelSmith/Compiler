@@ -223,16 +223,6 @@ def p_statement_block_B( p ) :
   'statement_block : LBRACE statement_declaration_list_opt RBRACE'
   p[0] = Statement_Block( p.lineno(1), p[2] )
 
-# Break statement
-def p_statement_break( p ) :
-  'statement : BREAK'
-  p[0] = Statement_Break( p.lineno(1) )
-
-# Continue statement
-def p_statement_continue( p ) :
-  'statement : CONTINUE'
-  p[0] = Statement_Continue( p.lineno(1) )
-
 # Expression statement
 def p_statement_expr( p ) :
   'statement : expression'
@@ -252,11 +242,6 @@ def p_else_opt( p ) :
 def p_statement_read( p ) :
   'statement : READ LPAREN lvalue_list RPAREN'
   p[0] = Statement_Read( p.lineno(1), p[3] )
-
-# Return statement
-def p_statement_return( p ) :
-  'statement : RETURN expression_opt'
-  p[0] = Statement_Return( p.lineno(1), p[2] )
 
 # Statement / declaration list (statements and declarations
 # separated by semicolons).  Possibly zero items in list.
@@ -363,11 +348,6 @@ def p_expression_str_literal( p ) :
 def p_expression_lvalue( p ) :
   'expression : lvalue'
   p[0] = p[1]
-
-# Function call
-def p_expression_funccall( p ) :
-  'expression : ID LPAREN expression_list_opt RPAREN %prec FUNCCALL'
-  p[0] = FuncCall( p.lineno(1), p[1], p[3] )
 
 # Expression list (expressions separated by commas).
 # Might be zero expression in the list.
