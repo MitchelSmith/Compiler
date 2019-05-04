@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f83cf24-b423-4156-8ea7-61803dec490e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.vs/HMWK_05_dalioba/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParseTree/BinaryOp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParseTree/BinaryOp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParseTree/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParseTree/common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniFrontEnd.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniFrontEnd.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,18 +57,18 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="Statement_If.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Statement_If.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ParseTree/Statement_If.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-224" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="miniFrontEnd.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="miniFrontEnd.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miniFrontEnd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="223" column="45" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="45" />
+            <state relative-caret-position="476">
+              <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
               <folding>
                 <element signature="e#106#116#0" expanded="true" />
               </folding>
@@ -94,9 +89,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/miniFrontEnd.py" />
         <option value="$PROJECT_DIR$/ParseTree/common.py" />
         <option value="$PROJECT_DIR$/ParseTree/BinaryOp.py" />
+        <option value="$PROJECT_DIR$/miniFrontEnd.py" />
       </list>
     </option>
   </component>
@@ -187,16 +182,6 @@
     <entry file="file://$PROJECT_DIR$/SymbolTable.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/miniFrontEnd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="223" column="45" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="45" />
-          <folding>
-            <element signature="e#106#116#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Exceptions.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -241,6 +226,16 @@
     <entry file="file://$PROJECT_DIR$/ParseTree/Statement_If.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-224" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miniFrontEnd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
+          <folding>
+            <element signature="e#106#116#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

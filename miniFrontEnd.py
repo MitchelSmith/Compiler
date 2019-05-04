@@ -25,7 +25,6 @@ parser = None
 # Lexical analysis section
 
 reserved = { rw : rw.upper() for rw in (
-  'break', 'continue', 'return',
   'if', 'else',
   'read', 'write',
   'while',
@@ -137,8 +136,7 @@ precedence = (
   ( 'left',  'PLUS', 'MINUS' ),
   ( 'left',  'MULTIPLY', 'DIVIDE', 'MODULUS' ),
   ( 'right', 'EXPONENTIATION' ),
-  ( 'right', 'NOT', 'UMINUS', 'UPLUS' ),
-  ( 'left',  'FUNCCALL' )
+  ( 'right', 'NOT', 'UMINUS', 'UPLUS' )
   )
 
 #-------------------
