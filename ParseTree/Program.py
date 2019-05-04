@@ -22,6 +22,8 @@ class Program() :
     self.m_Block.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    return None
+    ast = self.m_Block.semantic( symbolTable )
+
+    return ast
 
 #---------#---------#---------#---------#---------#--------#
