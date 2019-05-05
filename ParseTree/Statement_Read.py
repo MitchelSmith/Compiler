@@ -23,11 +23,11 @@ class Statement_Read() :
       lvalue.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    aslList = []
+    astList = []
     for lvalue in self.m_IDList :
-      aslList.append(lvalue.semantic( symbolTable ))
+      astList.append(lvalue.semantic( symbolTable ))
 
-    asl = ( 'READ', aslList )
+    ast = ( 'READ', astList )
 
     return ast
 
