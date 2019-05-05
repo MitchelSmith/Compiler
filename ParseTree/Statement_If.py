@@ -34,13 +34,20 @@ class Statement_If() :
 
   def semantic( self, symbolTable ) :
     testAst = self.m_TestExpr.semantic( symbolTable )
-    thenAst = self.m_ThenStmt.semantic( symbolTable )
-    if self.m_ElseStmt is not None :
-      elseAst = self.m_ElseStmt.semantic( symbolTable )
-    else :
-      elseAst = ( 'NOOP', )
 
-    ast = ( 'IF', testAst, thenAst, elseAst )
+    if (testAst[3] == True) :
+      if (testAst[4] == 1) :
+        ast = self.m_ThenStmt.semantic(symbolTable)
+      else :
+        ast = ('NOOP', )
+    else :
+      thenAst = self.m_ThenStmt.semantic(symbolTable)
+      if self.m_ElseStmt is not None:
+        elseAst = self.m_ElseStmt.semantic(symbolTable)
+      else:
+        elseAst = ('NOOP',)
+
+      ast = ('IF', testAst, thenAst, elseAst)
 
     return ast
     # 18 lines of code, analyze expression recursively, if constant evaluate if true or false
