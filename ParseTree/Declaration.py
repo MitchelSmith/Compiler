@@ -64,7 +64,9 @@ class Declaration() :
 
     entry = symbolTable.addName( name, self.m_Kind, self.m_LineNum)
 
-    ast = ( 'VARIABLE_INIT', entry.qualifiedName, self.m_Args[2] )
+    astExpr = self.m_Args[2].semantic( symbolTable )
+
+    ast = ( 'VARIABLE_INIT', entry.qualifiedName, astExpr )
 
     return ast
 
