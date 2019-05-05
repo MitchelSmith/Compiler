@@ -44,7 +44,7 @@ class Lvalue() :
     if entry is None :
       raise SemanticError( f'({self.m_LineNum}) Undeclared name {name!r} encountered.' )
 
-    ast = ( 'EXPR', ( 'LVALUE', entry.qualifiedName ), self.m_Kind, False, None )
+    ast = ( 'EXPR', ( 'LVALUE', entry.qualifiedName ), 'int', False, None )
 
     return ast
 
