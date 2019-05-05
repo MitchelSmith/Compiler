@@ -38,6 +38,8 @@ class Statement_If() :
     if (testAst[3] == True) :
       if (testAst[4] == 1) :
         ast = self.m_ThenStmt.semantic(symbolTable)
+      elif (testAst[4] == 0 and self.m_ElseStmt is not None) :
+        ast = self.m_ElseStmt.semantic(symbolTable)
       else :
         ast = ('NOOP', )
     else :
