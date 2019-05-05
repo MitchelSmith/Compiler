@@ -5,6 +5,7 @@
 import sys
 
 from .common       import *
+from .Literal      import *
 
 #---------#---------#---------#---------#---------#--------#
 DEFAULT_VALUE = {
@@ -62,13 +63,15 @@ class Declaration() :
     if (symbolTable.nameExistsInCurrentScope( name )) :
         raise SemanticError( f'({self.m_LineNum}) Variable, {name!r}, already exists.' )
 
-    entry = symbolTable.addName( name, self.m_Kind, self.m_LineNum)
+    entry = symbolTable.addName(name, self.m_Kind, self.m_LineNum)
 
-    if self.m_Args[2] != None :
+    if self.m_Args[2] != None:
       astExpr = self.m_Args[2].semantic(symbolTable)
-      ast = ('VARIABLE_INIT', entry.qualifiedName, astExpr)
-    else :
-      ast = ('VARIABLE_INIT', entry.qualifiedName, None )
+    else:
+      zero = Literal(self.m_LineNum, 'int', 0)
+      astExpr = zero.semantic(symbolTable)
+
+    ast = ('VARIABLE_INIT', entry.qualifiedName, astExpr)
 
     return ast
 
