@@ -25,14 +25,15 @@ class Statement_While() :
 
   def semantic( self, symbolTable ) :
     testAst = self.m_TestExpr.semantic( symbolTable )
-    bodyAst = self.m_Stmt.semantic( symbolTable )
 
     if (testAst[3] == True) :
       if (testAst[4] == 1) :
+        bodyAst = self.m_Stmt.semantic(symbolTable)
         ast = ( 'LOOP', bodyAst)
       else :
         ast = ( 'NOOP', )
     else:
+      bodyAst = self.m_Stmt.semantic(symbolTable)
       ast = ( 'WHILE', testAst, bodyAst )
 
     return ast
