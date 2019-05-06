@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f83cf24-b423-4156-8ea7-61803dec490e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ParseTree/BinaryOp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParseTree/BinaryOp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseTree/UnaryOp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParseTree/UnaryOp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ParseTree/BinaryOp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="626">
+              <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="77" selection-end-column="14" />
               <folding>
                 <element signature="e#106#116#0" expanded="true" />
               </folding>
@@ -24,11 +24,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ParseTree/UnaryOp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ASTSummary.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="910">
-              <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+            <state relative-caret-position="1072">
+              <caret line="64" column="20" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="64" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -84,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miniFrontEnd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="155" column="30" lean-forward="true" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="30" />
+            <state relative-caret-position="5039">
+              <caret line="251" column="8" lean-forward="true" selection-start-line="251" selection-start-column="8" selection-end-line="251" selection-end-column="8" />
               <folding>
                 <element signature="e#106#116#0" expanded="true" />
               </folding>
@@ -142,6 +151,7 @@
         <option value="$PROJECT_DIR$/ParseTree/Declaration.py" />
         <option value="$PROJECT_DIR$/ASTSummary.txt" />
         <option value="$PROJECT_DIR$/ParseTree/BinaryOp.py" />
+        <option value="$PROJECT_DIR$/ParseTree/UnaryOp.py" />
       </list>
     </option>
   </component>
@@ -242,9 +252,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ParseTree/UnaryOp.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ParseTree/Statement_While.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -263,16 +270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2700">
           <caret line="131" column="14" selection-start-line="131" selection-start-column="6" selection-end-line="131" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miniFrontEnd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="155" column="30" lean-forward="true" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="30" />
-          <folding>
-            <element signature="e#106#116#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -318,13 +315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ASTSummary.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ParseTree/Declaration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="801">
@@ -335,13 +325,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ParseTree/BinaryOp.py">
+    <entry file="file://$PROJECT_DIR$/miniFrontEnd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="5039">
+          <caret line="251" column="8" lean-forward="true" selection-start-line="251" selection-start-column="8" selection-end-line="251" selection-end-column="8" />
           <folding>
             <element signature="e#106#116#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ASTSummary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1072">
+          <caret line="64" column="20" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="64" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseTree/BinaryOp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="77" selection-end-column="14" />
+          <folding>
+            <element signature="e#106#116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseTree/UnaryOp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
