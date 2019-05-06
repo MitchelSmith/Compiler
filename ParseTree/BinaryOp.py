@@ -24,25 +24,19 @@ def evaluateBinary( op, lValue, rValue ) :
 
   ops = { '+': operator.add, '-': operator.sub, '/': operator.floordiv, '*': operator.mul, '^': operator.pow,
           '<': operator.lt, '<=': operator.le, '>': operator.gt, '>=': operator.ge, '%': operator.mod,
-          '||': operator.or_, '&&': operator.and_, '!=': operator.ne, '==': operator.eq }
+          '!=': operator.ne, '==': operator.eq }
 
-  result = ops[op](lValue, rValue)
+  if (op == '&&') :
+    result = (lValue and rValue)
+  elif (op == '||') :
+    result = (lValue or rValue)
+  else :
+    result = ops[op](lValue, rValue)
 
-  # if ( op == '+' ) :
-  #   result = lValue + rValue
-  # elif ( op == '-' ) :
-  #   result = lValue - rValue
-  # elif ( op == '*' ) :
-  #   result = lValue * rValue
-  # elif ( op == '/' ) :
-  #   result = lValue // rValue
-  # elif ( op == '%' ) :
-  #   result = lValue % rValue
-  # elif ( op == '^' ) :
-  #   result = lValue ^ rValue
-  # elif ( op == '&&' or op == '||' or op == '<' or op == '<=' or op == '>' or op == '>=' or op == '==' or op == '!=' ) :
-  #   result = ops['&&'](lValue, rValue)
-
+  if (result == True) :
+    result = 1
+  if (result == False) :
+    result = 0
 
   if ( result != None ) :
     return result
