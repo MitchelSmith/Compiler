@@ -25,11 +25,11 @@ class Statement_Block() :
   def semantic( self, symbolTable ) :
     name = symbolTable.openScope( self.m_LineNum )
 
-    aslList = []
+    astList = []
     for s in self.m_StmtList :
-      aslList.append(s.semantic( symbolTable ))
+      astList.append(s.semantic( symbolTable ))
 
-    ast = ( 'SCOPE', name, aslList )
+    ast = ( 'SCOPE', name, astList )
 
     return ast
 

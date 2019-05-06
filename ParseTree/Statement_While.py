@@ -24,11 +24,11 @@ class Statement_While() :
     self.m_Stmt.dump( indent+1, fp = fp )
 
   def semantic( self, symbolTable ) :
-    testAsl = self.m_TestExpr.semantic( symbolTable )
-    bodyAsl = self.m_Stmt.semantic( symbolTable )
+    testAst = self.m_TestExpr.semantic( symbolTable )
+    bodyAst = self.m_Stmt.semantic( symbolTable )
 
-    ast = ( 'WHILE', testAsl, bodyAsl )
+    ast = ( 'WHILE', testAst, bodyAst )
 
-    return asl
+    return ast
 
 #---------#---------#---------#---------#---------#--------#
