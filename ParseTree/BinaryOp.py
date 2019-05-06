@@ -6,6 +6,7 @@ import sys
 import operator
 
 from .common       import *
+from .Literal      import *
 
 #---------#---------#---------#---------#---------#--------#
 def binaryResultType( op, lType, rType ) :
@@ -73,8 +74,12 @@ class BinaryOp() :
     semanticType = binaryResultType(self.m_Op, leftAst[2], rightAst[2])
     const = True if ( leftAst[3] == True and rightAst[3] == True ) else None
     value = evaluateBinary(self.m_Op, leftAst[4], rightAst[4]) if const else None
-    
-    ast = ( 'EXPR', ( 'BINARY_OP', self.m_Op, leftAst, rightAst ), semanticType, const, value )
+
+    if (const == None) :
+      ast = ( 'EXPR', ( 'BINARY_OP', self.m_Op, leftAst, rightAst ), semanticType, const, value )
+    else :
+      result = Literal(self.m_LineNum, semanticType, value)
+      ast = result.semantic(symbolTable)
 
     return ast
 

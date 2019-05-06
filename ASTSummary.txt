@@ -59,7 +59,7 @@ carefully (and along with the Symbol Table summary).
       When the result of an expression is constant, you can
       generate a LITERAL expression with the correct type and
       value instead of a BINARY_OP.  (This will simplify the AST
-      increadibly in certain circumstances.)
+      incredibly in certain circumstances.)
 
     ( 'UNARY_OP', <op>, <right> ) -- Similar to the binary
       operator case.
