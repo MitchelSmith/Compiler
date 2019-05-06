@@ -27,7 +27,13 @@ class Statement_While() :
     testAst = self.m_TestExpr.semantic( symbolTable )
     bodyAst = self.m_Stmt.semantic( symbolTable )
 
-    ast = ( 'WHILE', testAst, bodyAst )
+    if (testAst[3] == True) :
+      if (testAst[4] == 1) :
+        ast = ( 'LOOP', bodyAst)
+      else :
+        ast = ( 'NOOP', )
+    else:
+      ast = ( 'WHILE', testAst, bodyAst )
 
     return ast
 
